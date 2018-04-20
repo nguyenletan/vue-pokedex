@@ -1,5 +1,13 @@
 # vue-pokedex
 
+## Demo link
+
+http://vue-pokedex.surge.sh/
+
+## Screenshot
+
+<img src="http://vue-pokedex.surge.sh/screenshot.jpg" alt="vue-pokedex screenshot"/>
+
 ## Quickstart
 
 ``` sh
