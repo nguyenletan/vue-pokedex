@@ -4,6 +4,7 @@
 
 <script>
 import sprites from '../assets/sprites.png'
+import store from '../store'
 
 export default {
   name: 'PokeCell',
@@ -23,7 +24,9 @@ export default {
   },
   methods: {
     onClick: function () {
-      this.handleOnClick(this.id)
+      // this.handleOnClick(this.id)
+      console.log(this.id)
+      store.commit('selectedPokemon', this.id)
     }
   },
   created: function () {

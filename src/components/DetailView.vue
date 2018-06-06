@@ -9,15 +9,22 @@
 </template>
 
 <script>
+import store from '../store'
+
 export default {
   name: 'DetailView',
-  props: {
-    pokemon: {
-      id: '',
-      name: '',
-      sprite: '',
-      type: ''
+  data: function () {
+    return {
     }
+  },
+  computed: {
+    pokemon () {
+      console.log(store)
+      return store.state.Pokemons.selectedPokemon
+    }
+  },
+  props: {
+
   }
 }
 </script>

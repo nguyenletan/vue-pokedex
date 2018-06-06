@@ -6,15 +6,16 @@
 </template>
 
 <script>
-
+import store from '../store'
 import PokeCell from './PokeCell'
-import { pokeClasses } from '../PokeClasses'
 
 export default {
   name: 'PokeList',
-  data: function () {
-    return {
-      cells: [{}]
+
+  computed: {
+    cells () {
+      console.log(store.state.Pokemons.pokemons)
+      return store.state.Pokemons.pokemons
     }
   },
   props: {
@@ -22,14 +23,7 @@ export default {
     }
   },
   created: function () {
-    // `this` points to the vm instance
-    this.cells = pokeClasses.map(pokeClass => {
-      return {
-        id: pokeClass.id,
-        pokeClass: pokeClass
-      }
-    })
-    // console.log(this.handleOnClick())
+    store.commit('getPokemons')
   },
   components: {
     PokeCell
